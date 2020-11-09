@@ -1,15 +1,15 @@
-import {ADD_CITY_FILTER,ADD_SPORT_FILTER} from './actions/types'
+import { ADD_CITY_FILTER, ADD_SPORT_FILTER, SET_CATE, SET_RESULT, SHOW_RESULT} from './actions/types'
 const initialState = {
 	cityFilter:{
 		"North York": {
 			filter:'',
 			active:false
 		},
-		"Downtown": {
+		"Toronto": {
 			filter: '',
 			active: false
 		},
-		"Markhum": {
+		"Markham": {
 			filter: '',
 			active: false
 		},
@@ -60,11 +60,16 @@ const initialState = {
 			filter: '',
 			active: false
 		}, 
-		"Hockey":{
+		"Hocky":{
 			filter: '',
 			active: false
 		}
-	}
+	},
+
+	cate:"",
+	result:[],
+	markers:[],
+	showResult:false
 }
 
 export default (state = initialState, action) => {
@@ -90,7 +95,7 @@ export default (state = initialState, action) => {
 		case ADD_SPORT_FILTER: {
 			const { sport, filter } = action.data
 			const active = state.sportFilter[`${sport}`].active
-			console.log('active')
+			// console.log('active')
 			const newSportFilter = {
 				...state.sportFilter,
 				[`${sport}`]: {
@@ -104,6 +109,47 @@ export default (state = initialState, action) => {
 				sportFilter: newSportFilter
 			}
 
+		}
+
+		case SET_CATE: {
+			const {cate} = action.data
+			return {
+				...state,
+				cate:cate
+			}
+		}
+
+		case SET_RESULT:{
+			const {result} = action.data
+			let newMarkers = []
+			
+			result.forEach(item => {
+				let markerItem = {
+					title: "",
+					coAddress: {},
+					address:"",
+					website:""
+				}
+				markerItem.title=item.organization
+				markerItem.coAddress=item.coAddress
+				markerItem.address=item.address
+				markerItem.website = item.website
+				newMarkers.push(markerItem)
+			});
+			return {
+				...state,
+				result:result,
+				markers:newMarkers
+			}
+		}
+
+		case SHOW_RESULT:{
+			const { show } = action.data
+			// console.log("rrrrrrrRshow",show)
+			return {
+				...state,
+				showResult:show
+			}
 		}
 	
 		default:{

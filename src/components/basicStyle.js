@@ -31,7 +31,7 @@ export const Title = styled.h3`
 	color: ${basicColor.primaryColor};
 	
 	@media only screen and (max-width:480px){
-		font-size:1.3rem;
+		font-size:1.2rem;
 	}
 `
 export const NavTitle = styled.h4`

@@ -1,25 +1,30 @@
 import React from 'react'
+import {Link} from 'gatsby'
 import { ResultItemWrapper } from './style'
 import { BankOutlined, PhoneOutlined, DesktopOutlined} from '@ant-design/icons'
 
-const ResultItem = () => {
+const ResultItem = ({data}) => {
 	return (
 		<ResultItemWrapper>
-			<div className="sportTag">BasketBall</div>
-			<div className="resultTitle">YMCA Child Gym Center</div>
+			<div className="sportTag">{data?data.sport:null}</div>
+			<div className="resultTitle">{data ? data.organization : null}</div>
 			<div className="info-row">
 				<BankOutlined className="icon"/>
-				<div>107 avondale ave North York</div>
+				<div>{data ? data.address:null}</div>
 			</div>
 
 			<div className="info-row">
 				<PhoneOutlined className="icon" />
-				<div>647-829-5577</div>
+				<div>{data ? data.phone : null}</div>
 			</div>
 
 			<div className="info-row">
 				<DesktopOutlined className="icon" />
-				<div>www.ymac.com</div>
+				<div>{data ? data.website : null}</div>
+			</div>
+
+			<div className="see-more-button">
+				<Link to={`/wishaball/${data.path}`}>See More</Link>
 			</div>
 
 

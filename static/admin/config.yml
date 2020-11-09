@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: haohanqi/wishAball
+media_folder: static/assets
+public_folder: /assets
+
+collections: 
+  - name: data
+    label: Data
+    files:
+    - file: src/data/wishaball.json
+      name: wishABallData
+      label: Wish-A-Ball-Data
+      fields: 
+          - label: wish-a-ball
+            name: wishaball
+            widget: list
+            allow_add: true
+            fields:
+              - {name: path, label: Path, widget: string}
+              - {name: sport, label: Sport, widget: string}
+              - {name: organization, label: Organization, widget: string}
+              - {name: website, label: Website, widget: string}
+              - {name: phone, label: Phone, widget: string}
+              - {name: address, label: Address, widget: string}
+              - name: coAddress
+                label: Coaddress
+                widget: object
+                fields:
+                    - {name: lat, label: Lat, widget: number, value_type: float}
+                    - {name: lng, label: Lng, widget: number, value_type: float}
+              - {name: city, label: City, widget: string} 
+              - {name: img, label: Img, widget: image}
+              - {name: info, label: Info, widget: string} 
+

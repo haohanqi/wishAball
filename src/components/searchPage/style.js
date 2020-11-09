@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import { BasicSection, basicColor } from '../basicStyle'
+import { BasicSection, basicColor,Title } from '../basicStyle'
 import {IntroPanel,BasicTitleStyle} from '../homepage/style'
+
 
 //-- SearchEntrySection
 export const SearchEntrySectionWrapper = styled(BasicSection)`
@@ -69,7 +70,6 @@ export const SearchFilterWrapper = styled.div`
 export const Cate = styled(BasicTitleStyle)`
 	font-size:1.2rem;
 	margin-bottom:0;
-	margin-right:30px;
 	@media only screen and (max-width:480px){
 		margin-bottom:30px;
 	}
@@ -112,15 +112,45 @@ export const TagActiveStyle = styled(TagStyle)`
 //--MapSection
 
 export const MapSectionWrapper = styled(BasicSection)`
-	padding: 5%;
+	min-height:600px;
+	padding: 0 5%;
 	margin-top:30px;
+`
+
+export const IconWrapper = styled.div`
+	box-sizing:border-box;
+	width:200px;
+	height:50px;
+	display:flex;
+	flex-direction:column;
+	justify-content:start;
+	align-items:start;
+
+	.content{
+		font-size:1rem;
+		font-weight:bold;
+		color:black;
+	}
+
+	.icon{
+		margin-top:5px;
+		font-size:30px;
+		color:red;
+	}
+
+}
+`
+
+export const MapWrapper = styled.div`
+	width:100%;
+	height:80vh;
 `
 
 //--ResultSection
 
 export const ResultSectionWrapper = styled(BasicSection)`
 	padding: 5%;
-	margin-top:30px;
+	min-height:100%;
 `
 export const ResultItemWrapper = styled.div`
 	position:relative;
@@ -167,9 +197,30 @@ export const ResultItemWrapper = styled.div`
 		}
 	}
 
-	@media only screen and (max-width:320px){
+	.see-more-button{
 		width:100%;
+		display:flex;
+		flex-firection:row;
+		justify-content:center;
+		align-items:center;
+
+		a{
+			font-size:1.2rem;
+			font-weight:900;
+			color:${basicColor.highlightColor};
+		}
+		
 	}
+
+	@media only screen and (max-width:1024px){
+		width:100%;
+		margin-bottom:40px;
+	}
+`
+
+export const KeyWord = styled(Title)`
+	color:${basicColor.secondaryColor};
+	margin:0 10px;
 `
 
 

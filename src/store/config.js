@@ -15,7 +15,7 @@ export default ({ element }) => {
 				search:{
 					cityFilter: {
 						"North York": '',
-						"Downtown": '',
+						"Toronto": '',
 						"Markhum": '',
 						"Scarborough": '',
 						"Vaughan": '',

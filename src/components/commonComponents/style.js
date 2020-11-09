@@ -170,4 +170,29 @@ export const BlogItemWrapper = styled.article`
 	}
 `
 
+export const AdvertisementWrapper = styled.div`
+	width:100%;
+	height:300px;
+	margin-bottom:30px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:center;
+
+	.cover-img{
+		flex:1;
+		width:100%;
+		height:100%;
+		background-color:black;
+	}
+
+	.ad-des{
+		flex:2;
+		width:100%;
+		height:100%;
+		background-color:red;
+	}
+
+`
+
 

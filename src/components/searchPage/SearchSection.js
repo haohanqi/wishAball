@@ -1,13 +1,66 @@
-import React from 'react'
+import React,{useEffect,useMemo,memo,useCallback} from 'react'
 import {connect} from 'react-redux'
 import {Row,Col} from 'antd'
+import gsap from 'gsap'
+import scrollTo from 'gsap/ScrollToPlugin'
 import { SearchSectionWrapper, SearchFilterWrapper, Cate, TagWrapper, DisableCate} from './style'
 import Tag from './Tag'
 import ResultSection from './ResultSection'
 import MapSection from './MapSection'
-import { addSportFilter, addCityFilter} from './state/actions/actions'
+import { addSportFilter, addCityFilter, setResult, showResult} from './state/actions/actions'
+import wishasport from '../../data/wishaball.json'
 
-const SearchSection = ({ show, cate, cityFilter, sportFilter, addCityFilter, addSportFilter}) => {
+const filterData = (wishasport, cate, cityFilter, sportFilter) => {
+	console.log("call")
+	// according to cate set data
+	let data
+	if (cate && cate === "sport") {
+		data = wishasport
+	} else {
+		data = null
+	}
+
+	// get selected fields
+	let cities = getSelectFiled(cityFilter)
+	let sports = getSelectFiled(sportFilter)
+	console.log("cities", cities)
+	console.log("sports", sports)
+
+	//filter data
+	let cityResult = []
+	cities.forEach(city => {
+		let cityData = data.filter(item => item.city === city)
+		cityResult = cityResult.concat(cityData)
+	})
+
+	let sportResult = []
+	sports.forEach(sport => {
+		let sportData = cityResult.filter(item => item.sport === sport)
+		sportResult = sportResult.concat(sportData)
+	})
+
+	console.log("sportResult", sportResult)
+
+	return sportResult
+}
+
+const getSelectFiled = (filterObject) => {
+	let result = []
+	for (const [key, value] of Object.entries(filterObject)) {
+		if (value.filter.length > 0) {
+			result.push(value.filter)
+		}
+	}
+	return result
+}
+
+
+
+const SearchSection = ({ cate, cityFilter, sportFilter, addCityFilter, addSportFilter,setResult,showResult}) => {
+
+	useEffect(()=>{
+		gsap.registerPlugin(scrollTo)
+	})
 
 	//-- user has to select at least one field at each cate
 	const checkNonEmpty = (filter)=>{
@@ -18,13 +71,26 @@ const SearchSection = ({ show, cate, cityFilter, sportFilter, addCityFilter, add
 				return nonEmpty
 			}
 		}
-		return false
+		return nonEmpty
 	}
+
+	// --filter data memorize the result
+	const memFilterData = useMemo(() => filterData(wishasport, cate, cityFilter, sportFilter) , [wishasport, cate, cityFilter, sportFilter])
+
+	const applyButtonOnClick = ()=>{
+		let result = memFilterData
+		setResult(result)
+		showResult(true)
+		if (result.length > 0) {
+			gsap.to(window, { duration: 1, scrollTo: ".result-wrapper" })
+		}
+	}
+
 
 	return (
 		<>
 			{
-			show ?
+			cate ?
 			<SearchSectionWrapper className="search-section-wrapper">
 				<SearchFilterWrapper>
 					
@@ -35,8 +101,8 @@ const SearchSection = ({ show, cate, cityFilter, sportFilter, addCityFilter, add
 						<Col xl={18} lg={18} sm={24} xs={24}>
 							<TagWrapper>	
 								<Tag name="North York" filter={cityFilter} setfilter={addCityFilter}/>
-								<Tag name="Downtown" filter={cityFilter} setfilter={addCityFilter}/>
-								<Tag name="Markhum" filter={cityFilter} setfilter={addCityFilter}/>
+								<Tag name="Toronto" filter={cityFilter} setfilter={addCityFilter}/>
+								<Tag name="Markham" filter={cityFilter} setfilter={addCityFilter}/>
 								<Tag name="Scarborough" filter={cityFilter} setfilter={addCityFilter} />
 								<Tag name="Vaughan" filter={cityFilter} setfilter={addCityFilter}/>
 								<Tag name="Richmond Hill" filter={cityFilter} setfilter={addCityFilter} />
@@ -58,7 +124,7 @@ const SearchSection = ({ show, cate, cityFilter, sportFilter, addCityFilter, add
 								<Tag name="Volleyball" filter={sportFilter} setfilter={addSportFilter} />
 								<Tag name="Soccer" filter={sportFilter} setfilter={addSportFilter} />
 								<Tag name="Football" filter={sportFilter} setfilter={addSportFilter} />
-								<Tag name="Hockey" filter={sportFilter} setfilter={addSportFilter} />
+								<Tag name="Hocky" filter={sportFilter} setfilter={addSportFilter} />
 							</TagWrapper>
 						</Col>
 					</Row>
@@ -66,7 +132,9 @@ const SearchSection = ({ show, cate, cityFilter, sportFilter, addCityFilter, add
 					<Row justify="center" align="middle">
 						<Col span={24} align="center">
 							{
-								checkNonEmpty(cityFilter) && checkNonEmpty(sportFilter) ? <Cate width="200px">Apply</Cate> : <DisableCate width="200px">Apply</DisableCate>
+								checkNonEmpty(cityFilter) && checkNonEmpty(sportFilter) ? 
+								<Cate width="200px" onClick={applyButtonOnClick}>Apply</Cate> 
+								:<DisableCate width="200px">Apply</DisableCate>
 							}
 						</Col>
 					
@@ -74,9 +142,10 @@ const SearchSection = ({ show, cate, cityFilter, sportFilter, addCityFilter, add
 
 				</SearchFilterWrapper>
 
-				<MapSection/>
-
-				<ResultSection/>
+				<ResultSection getSelectFiled={getSelectFiled} />
+				
+				<MapSection />
+				
 				
 			</SearchSectionWrapper> : null
 			}
@@ -85,9 +154,12 @@ const SearchSection = ({ show, cate, cityFilter, sportFilter, addCityFilter, add
 }
 
 const mapStateToProps = (state)=>{
-	console.log(state.searchReducer.cityFilter)
-	console.log(state.searchReducer.sportFilter)
+	// console.log(state.searchReducer.cityFilter)
+	// console.log(state.searchReducer.sportFilter)
+	// console.log(state.searchReducer.cate)
+
 	return {
+		cate: state.searchReducer.cate,
 		cityFilter: state.searchReducer.cityFilter,
 		sportFilter: state.searchReducer.sportFilter
 	}
@@ -96,17 +168,12 @@ const mapStateToProps = (state)=>{
 const mapDispatchToProps =(dispatch)=>{
 	return {
 		addCityFilter: (city,filter) => { dispatch(addCityFilter(city,filter))},
-		addSportFilter: (sport,filter) => { dispatch(addSportFilter(sport,filter)) }
+		addSportFilter: (sport,filter) => { dispatch(addSportFilter(sport,filter)) },
+		setResult: (result) => { dispatch(setResult(result))},
+		showResult:(show)=>{dispatch(showResult(show))}
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchSection)
+export default memo(connect(mapStateToProps, mapDispatchToProps)(SearchSection))
 
-	//< Tag name = "North York" filter = { filter } setfilter = { setfilter } />
-
-
-	// < Tag name = "Basketball" filter = { sportsFilter } setfilter = { setSportsFilter } />
-	// 	<Tag name="Volleyball" filter={sportsFilter} setfilter={setSportsFilter} />
-	// 	<Tag name="Soccer" filter={sportsFilter} setfilter={setSportsFilter} />
-	// 	<Tag name="Football" filter={sportsFilter} setfilter={setSportsFilter} />
-	// 	<Tag name="Hockey" filter={sportsFilter} setfilter={setSportsFilter} />
+	

@@ -1,18 +1,19 @@
 import React,{useEffect} from 'react'
 import {Row,Col} from 'antd' 
 import gsap from 'gsap'
+import {connect} from 'react-redux'
+import {setCate} from './state/actions/actions'
 import  scrollTo  from 'gsap/ScrollToPlugin'
 import { SearchEntrySectionWrapper, SearchPanel} from './style'
 import {BasicTitleStyle} from '../homepage/style'
 
 
-const SearchEntrySection = ({ setCate, showFilter}) => {
+const SearchEntrySection = ({setCate}) => {
 	useEffect(()=>{
 		gsap.registerPlugin(scrollTo)
 	})
 
 	const searchClick = (cate)=>{
-		showFilter(true); 
 		setCate(cate);
 		gsap.to(window, { duration: 1, scrollTo:".search-section-wrapper"})
 
@@ -52,4 +53,13 @@ const SearchEntrySection = ({ setCate, showFilter}) => {
 	)
 }
 
-export default SearchEntrySection
+
+
+const mapDispatchToProps = (dispatch)=>{
+	return {
+		setCate: (cate) => {dispatch(setCate(cate))}
+	}
+
+}
+
+export default connect(null, mapDispatchToProps)(SearchEntrySection)
