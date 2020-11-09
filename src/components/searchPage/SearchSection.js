@@ -8,7 +8,8 @@ import Tag from './Tag'
 import ResultSection from './ResultSection'
 import MapSection from './MapSection'
 import { addSportFilter, addCityFilter, setResult, showResult} from './state/actions/actions'
-import wishasport from '../../data/wishaball.json'
+import {wishasport} from '../../data/wishASportData.json'
+
 
 const filterData = (wishasport, cate, cityFilter, sportFilter) => {
 	console.log("call")

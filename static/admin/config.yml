@@ -8,12 +8,12 @@ collections:
   - name: data
     label: Data
     files:
-    - file: src/data/wishaball.json
-      name: wishABallData
-      label: Wish-A-Ball-Data
+    - file: src/data/wishASportData.json
+      name: wishASportData
+      label: Wish-A-Sport-Data
       fields: 
-          - label: wish-a-ball
-            name: wishaball
+          - label: wish-a-sport
+            name: wishasport
             widget: list
             allow_add: true
             fields:
@@ -31,5 +31,5 @@ collections:
                     - {name: lng, label: Lng, widget: number, value_type: float}
               - {name: city, label: City, widget: string} 
               - {name: img, label: Img, widget: image}
-              - {name: info, label: Info, widget: string} 
+              - {name: info, label: Info, widget: text} 
 

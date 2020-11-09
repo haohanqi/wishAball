@@ -7,11 +7,11 @@
 // You can delete this file if you're not using it
 
 exports.createPages = ({actions:{createPage}})=>{
-	const detailsPage = require('./src/data/wishaball.json')
+	const detailsPage = require('./src/data/wishASportData.json')
 
 	console.log(detailsPage)
 
-	detailsPage.forEach(page=>{
+	detailsPage.wishasport.forEach(page=>{
 		createPage({
 			path:`wishaball/${page.path}`,
 			component:require.resolve('./src/templete/detailsPage'),
@@ -22,7 +22,7 @@ exports.createPages = ({actions:{createPage}})=>{
 				phone:page.phone,
 				website:page.website,
 				sport:page.sport,
-				image:page.image
+				image:page.img
 			}
 		})
 	})

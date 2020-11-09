@@ -4,7 +4,7 @@ import { DetailsPageWrapper} from './style'
 import { BasicTitleStyle } from '../components/homepage/style'
 import Layout from '../components/layout'
 const detailsPage = ({pageContext}) => {
-
+	console.log(pageContext.image)
 	return (
 		<Layout>
 		<DetailsPageWrapper>
@@ -12,7 +12,7 @@ const detailsPage = ({pageContext}) => {
 				<Col xxl={12} xl={12} md={12} sm={24} xs={24}>
 					<BasicTitleStyle width="250px">{pageContext.title}</BasicTitleStyle>
 
-					<img src={require(`../${pageContext.image}`)} />
+					<img src={require(`../../static${pageContext.image}`)} />
 
 					<div className="info-part">
 						<BasicTitleStyle width="100px">Info</BasicTitleStyle>
