@@ -1,0 +1,34 @@
+{
+  "wishaball": [
+    {
+      "img": "/assets/generic-mobile-b.jpg",
+      "path": "data1",
+      "coAddress": {
+        "lat": 43.833853,
+        "lng": -79.509828
+      },
+      "city": "Vaughan",
+      "info": "Contrary to popular belief, Lorem Ipsum is not simply random has roots in a piece of classical Latin literature from 45 BC,making it over 2000 years old.Richard McClintock,a Latin professor at Hampden - Sydney College in Virginia,looked up one of the more obscure Latin words ",
+      "phone": "+14165977825",
+      "organization": "Toronto Marlboros",
+      "sport": "Hocky",
+      "address": "53 Alberta Dr, Concord, ON L4K 4X4",
+      "website": "https://torontomarlboros.com"
+    },
+    {
+      "img": "/assets/generic-mobile-b.jpg",
+      "path": "data2",
+      "coAddress": {
+        "lat": 43.894733,
+        "lng": -79.262117
+      },
+      "city": "Markham",
+      "info": "Contrary to popular belief, Lorem Ipsum is not simply random has roots in a piece of classical Latin literature from 45 BC,making it over 2000 years old.Richard McClintock,a Latin professor at Hampden - Sydney College in Virginia,looked up one of the more obscure Latin words",
+      "phone": "+19054718820",
+      "organization": "Markham Waxers",
+      "sport": "Hocky",
+      "address": "6140 16th Ave, Markham, ON L3P 3K8",
+      "website": "https://waxers.com"
+    }
+  ]
+}
