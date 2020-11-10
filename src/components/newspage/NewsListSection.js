@@ -4,7 +4,8 @@ import { NewsListSectionWrapper } from './style'
 import {BasicTitleStyle} from '../homepage/style'
 import BlogItem from '../commonComponents/BlogItem'
 
-const NewsListSection = () => {
+const NewsListSection = ({data}) => {
+	const { edges } = data.allMarkdownRemark
 	return (
 		<NewsListSectionWrapper>
 			<Row justify="start" align="middle">
@@ -12,10 +13,10 @@ const NewsListSection = () => {
 			</Row>
 
 			<Row justify="space-around" align="middle">
-				<BlogItem width="35%" padding="10px"/>
-				<BlogItem width="35%" padding="10px"/>
-				<BlogItem width="35%" padding="10px"/>
-				<BlogItem width="35%" padding="10px"/>
+				{
+					edges.map((item) => <BlogItem key={item.node.frontmatter.path} blog={item.node} width="40%" padding="10px" />)
+				}
+			
 			</Row>
 			
 		</NewsListSectionWrapper>

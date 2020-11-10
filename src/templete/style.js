@@ -56,3 +56,35 @@ export const DetailsPageWrapper = styled(BasicSection)`
 		
 	}
 `
+
+export const BlogPageWrapper = styled(BasicSection)`
+	.blog-wrapper{
+		.blog-title{
+			font-size:2rem;
+			font-weight:900;
+		}
+
+		.blog-date{
+			font-size:1rem;
+			font-weight:900;
+			margin-bottom:10px;
+		}
+
+		.blog-author{
+			font-size:1.2rem;
+			font-weight:900;
+			margin-bottom:10px;
+		}
+
+		.blog-content{
+			img{
+				width:60%;
+				margin:20px 0px;
+				height:300px;
+				object-fit:contain;
+				border:1px solid black;
+			}
+		}
+	}
+
+`

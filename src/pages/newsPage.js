@@ -1,14 +1,13 @@
 import React, { useEffect } from "react"
 import gsap from 'gsap'
-import { Link } from "gatsby"
+import {graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PanelSection from '../components/newspage/PanelSection'
 import NewsListSection from '../components/newspage/NewsListSection'
 
 
-const NewsPage = () => {
-  
+const NewsPage = ({data}) => {  
   useEffect(() => {
     gsap.set("body", { overflowY: "auto" })
   })
@@ -17,10 +16,26 @@ const NewsPage = () => {
     <Layout>
       <SEO title="News"/>
       <PanelSection/>
-      <NewsListSection/>
+      <NewsListSection data={data}/>
     </Layout>
 )
 
 }
+
+export const pageQuery = graphql`
+	query blogList {
+			allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+				edges {
+					node {
+						excerpt
+						frontmatter {
+							title
+							path
+							date(formatString: "MMMM DD, YYYY")
+						}
+					}
+			}
+		}
+	}`
 
 export default NewsPage

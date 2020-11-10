@@ -1,22 +1,21 @@
 import React from 'react'
+import {Link} from 'gatsby'
 import { BlogTitle, LargeDes} from '../basicStyle'
 import { BlogItemWrapper } from './style'
 
-const BlogItem = ({width,padding}) => {
+const BlogItem = ({width,padding,blog}) => {
+	console.log(blog)
 	return (
 		<BlogItemWrapper width={width} padding={padding}>
 			<header className="header-part">
-				<BlogTitle>Winter Kids Basketball training</BlogTitle>
-				<div className="date">2020 / 10 / 27</div>	
-				<div className="author">Author: YE</div>
+			<BlogTitle>{blog.frontmatter.title}</BlogTitle>
+				<div className="date">{blog.frontmatter.date}</div>
 			</header>
 			<LargeDes>
-				Contrary to popular belief, Lorem Ipsum is not simply random 
-				has roots in a piece of classical Latin literature from 45 BC, 
-				making it over 2000 years old…..
+				{blog.excerpt}
 			</LargeDes>
 			<div className="readMore-button">
-				Read More
+				<Link to={blog.frontmatter.path}>Read More</Link>
 			</div>
 			
 		</BlogItemWrapper>

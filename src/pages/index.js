@@ -9,9 +9,10 @@ import IntroSection from '../components/homepage/IntroSection'
 import WhatWeDoSection from '../components/homepage/WhatWeDoSection'
 import WorkWithUs from '../components/homepage/WorkWithUsSection'
 import NewsSection from '../components/homepage/NewsSection'
+import {graphql} from 'gatsby'
 
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
   useEffect(()=>{
     //const t1 = gsap.timeline()
     // gsap.set("body", { overflowY: "hidden" })
@@ -38,10 +39,27 @@ const IndexPage = () => {
     <EntrySection/>
     <IntroSection/>
     <WhatWeDoSection/>
-    <NewsSection/>
+    <NewsSection data={data}/>
     <WorkWithUs />
   </Layout>
   )
 }
 
 export default IndexPage
+
+//get first two blog post
+export const pageQuery = graphql`
+	query MyQuery {
+			allMarkdownRemark(limit: 2, sort: {order: DESC, fields: [frontmatter___date]}) {
+				edges {
+					node {
+						excerpt
+						frontmatter {
+							title
+							path
+							date(formatString: "MMMM DD, YYYY")
+						}
+					}
+			}
+		}
+	}`
