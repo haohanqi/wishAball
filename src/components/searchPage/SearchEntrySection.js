@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {setCate} from './state/actions/actions'
 import  scrollTo  from 'gsap/ScrollToPlugin'
 import { SearchEntrySectionWrapper, SearchPanel} from './style'
-import {BasicTitleStyle} from '../homepage/style'
+import {BasicTitleStyle} from '../homePage/style'
 
 
 const SearchEntrySection = ({setCate}) => {

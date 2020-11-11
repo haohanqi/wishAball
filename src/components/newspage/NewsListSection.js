@@ -1,7 +1,7 @@
 import React from 'react'
 import {Row} from 'antd'
 import { NewsListSectionWrapper } from './style'
-import {BasicTitleStyle} from '../homepage/style'
+import {BasicTitleStyle} from '../homePage/style'
 import BlogItem from '../commonComponents/BlogItem'
 
 const NewsListSection = ({data}) => {

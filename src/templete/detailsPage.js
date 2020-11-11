@@ -1,7 +1,7 @@
 import React from 'react'
 import {Row,Col} from 'antd'
 import { DetailsPageWrapper} from './style'
-import { BasicTitleStyle } from '../components/homepage/style'
+import { BasicTitleStyle } from '../components/homePage/style'
 import Layout from '../components/layout'
 const detailsPage = ({pageContext}) => {
 	console.log(pageContext.image)

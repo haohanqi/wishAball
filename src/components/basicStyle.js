@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 	body {
 		margin:0;
 		font-family: Lato, sans-serif;
-		h1,h2,h3,h4,h5,h6{
+		h1,h2,h3,h4,h5,h6,p{
 			margin:0;
 		}
 	}
@@ -52,6 +52,7 @@ export const BlogTitle = styled.h3`
 
 export const Des = styled.p`
 	font-size:1rem;
+	margin-bottom:15px;
 
 	@media only screen and (max-width:480px){
 		font-size:0.85rem;

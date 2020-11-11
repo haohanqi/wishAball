@@ -41,7 +41,9 @@ const MobileHeader = ({open,setClose}) => {
       <MobileNavItem className="mobile-nav-item">
         <Link to="/searchPage">Search</Link>
       </MobileNavItem>
-      <MobileNavItem className="mobile-nav-item">Contact</MobileNavItem>
+      <MobileNavItem className="mobile-nav-item">
+        <Link to="/contactPage">Contact</Link>
+      </MobileNavItem>
     </MobileHeaderWrapper>
   )
 }
@@ -75,7 +77,7 @@ const MobileHeader = ({open,setClose}) => {
           </NavItem>
 
           <NavItem>
-            <Link>Contact</Link>
+            <Link to="/contactPage">Contact</Link>
           </NavItem>
 
           <Hum onClick={()=>{setOpen(true)}}>

@@ -1,14 +1,12 @@
 import React,{useEffect} from "react"
 import gsap from 'gsap'
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import HomeOverlay from '../components/homepage/HomeOverlay'
-import EntrySection from '../components/homepage/EntrySection'
-import IntroSection from '../components/homepage/IntroSection'
-import WhatWeDoSection from '../components/homepage/WhatWeDoSection'
-import WorkWithUs from '../components/homepage/WorkWithUsSection'
-import NewsSection from '../components/homepage/NewsSection'
+import EntrySection from '../components/homePage/EntrySection'
+import IntroSection from '../components/homePage/IntroSection'
+import WhatWeDoSection from '../components/homePage/WhatWeDoSection'
+import WorkWithUs from '../components/homePage/WorkWithUsSection'
+import NewsSection from '../components/homePage/NewsSection'
 import {graphql} from 'gatsby'
 
 

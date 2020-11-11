@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { BasicSection, basicColor,Title } from '../basicStyle'
-import {IntroPanel,BasicTitleStyle} from '../homepage/style'
+import {IntroPanel,BasicTitleStyle} from '../homePage/style'
 
 
 //-- SearchEntrySection

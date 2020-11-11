@@ -6,10 +6,8 @@
 
 // You can delete this file if you're not using it
 
-exports.createPages = ({actions:{createPage}})=>{
+exports.createPages = async ({ actions: { createPage }, graphql})=>{
 	const detailsPage = require('./src/data/wishASportData.json')
-
-	//console.log(detailsPage)
 
 	detailsPage.wishasport.forEach(page=>{
 		createPage({
@@ -27,10 +25,6 @@ exports.createPages = ({actions:{createPage}})=>{
 		})
 	})
 
-}
-
-exports.createPages = async ({actions,graphql}) =>{
-	const {createPage} = actions
 
 	const blogPostTemplate = require.resolve('./src/templete/blogPage.js')
 
@@ -51,16 +45,52 @@ exports.createPages = async ({actions,graphql}) =>{
     }
   `)
 
-  if(result.errors){
-	  console.log('some error with graphql')
-  }
+	if (result.errors) {
+		console.log('some error with graphql')
+	}
 
-result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-	createPage({
-		path: node.frontmatter.path,
-		component: blogPostTemplate,
-		context: {}
+	result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+		createPage({
+			path: node.frontmatter.path,
+			component: blogPostTemplate,
+			context: {}
+		})
 	})
-})
 
 }
+
+// exports.createPages = async ({actions,graphql}) =>{
+// 	const {createPage} = actions
+
+// 	const blogPostTemplate = require.resolve('./src/templete/blogPage.js')
+
+// 	const result = await graphql(`
+//     {
+//       allMarkdownRemark(
+//         sort: { order: DESC, fields: [frontmatter___date] }
+//         limit: 1000
+//       ) {
+//         edges {
+//           node {
+//             frontmatter {
+//               path
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `)
+
+//   if(result.errors){
+// 	  console.log('some error with graphql')
+//   }
+
+// result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+// 	createPage({
+// 		path: node.frontmatter.path,
+// 		component: blogPostTemplate,
+// 		context: {}
+// 	})
+// })
+
+// }

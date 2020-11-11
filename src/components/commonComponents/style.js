@@ -56,25 +56,33 @@ export const Hum = styled.div`
 	align-items:center;
 
 	.humBar{
+
 		width:90%;
 		height:3px;
 		background-color:${basicColor.secondaryColor}
+
 	}
 
 	@media only screen and (min-width:481px){
+
 		display:none;
+
 	}
 `
 
 export const Logo = styled.div`
 	img{
+
 		width:80px;
 		height:55px;
 		object-fit:contain;
+
 	}
 
 	@media only screen and (max-width:480px){
+
 		display:none;
+
 	}
 `
 
@@ -84,7 +92,9 @@ export const LogoText = styled(Title)`
 	vertical-align:middle;
 
 	@media only screen and (max-width:480px){
+
 		display:inline-block;
+
 	}
 `
 
@@ -101,29 +111,101 @@ export const MobileHeaderWrapper = styled.header`
 	flex-direction:column;
 	justify-content:space-around;
 	align-items:center;
+
 	.close-button{
+
 		font-size:2rem;
 		font-weight:bold;
 		color:${basicColor.secondaryColor};
 		width:100%;
 		text-align:left;
+
 	}
 `
 
 export const MobileNavItem = styled(NavItem)`
-font-size:2rem;
-@media only screen and (max-width:480px){
-		display:block;
-}
+	font-size:2rem;
+	@media only screen and (max-width:480px){
+
+			display:block;
+
+	}
 `
 
 //--footer
 
 export const FooterWrapper = styled.footer`
+	box-sizing:border-box;
 	width:100%;
 	min-height:350px;
 	background-color:${basicColor.secondaryColor};
-	padding:5%;
+	padding:3%;
+`
+
+export const FooterItemWrapper = styled.div`
+	display:flex;
+	flex-direction:column;
+	justify-content:flex-start;
+	align-items:center;
+	width:90%;
+	height:290px;
+	margin:0 5%;
+	
+
+	img{
+		height:300px;
+	}
+
+	.footer-title{
+
+		font-size:1.5rem;
+		font-weight:900;
+		margin-bottom:30px;
+		color:${basicColor.primaryColor};
+
+	}
+
+	.footer-des{
+
+		font-size:1.1rem;
+		margin-bottom:10px;
+		text-align:left;
+		line-height:2;
+		color:${basicColor.primaryColor};
+
+	}
+
+	a{
+
+		font-size:1.1rem;
+		margin-bottom:10px;
+		color:${basicColor.primaryColor};
+
+	}
+
+	.footer-contact{
+		width:100%;
+		display:flex;
+		flex-direction:row;
+		justify-content:flex-start;
+		align-items:center;
+		text-align:left;
+		font-size:1.1rem;
+		margin-bottom:20px;
+		color:${basicColor.primaryColor};
+		.icon{
+			margin-right:15px;
+			font-size:2rem;
+			color:${basicColor.primaryColor};
+		}
+		
+	}
+
+	@media only screen and (max-width:480px){
+		align-items:flex-start;
+		padding:5%;
+	}	
+
 `
 
 //--BlogItem

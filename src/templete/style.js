@@ -77,12 +77,34 @@ export const BlogPageWrapper = styled(BasicSection)`
 		}
 
 		.blog-content{
+			font-size:1.2rem;
 			img{
 				width:60%;
 				margin:20px 0px;
 				height:300px;
 				object-fit:contain;
 				border:1px solid black;
+			}
+		}
+	}
+
+	@media only screen and (max-width:480px){
+		.blog-wrapper{
+
+			.blog-title{
+				font-size:1.5rem;
+			}
+
+			.blog-author{
+				font-size:1rem;
+			}
+
+			.blog-content{
+				img{
+					width:100%;
+					height:200px;
+				}
+
 			}
 		}
 	}

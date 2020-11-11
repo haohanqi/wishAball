@@ -3,8 +3,8 @@ import gsap from 'gsap'
 import {graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PanelSection from '../components/newspage/PanelSection'
-import NewsListSection from '../components/newspage/NewsListSection'
+import PanelSection from '../components/newsPage/PanelSection'
+import NewsListSection from '../components/newsPage/NewsListSection'
 
 
 const NewsPage = ({data}) => {  

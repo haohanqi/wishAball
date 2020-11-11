@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import {BasicSection,basicColor} from '../basicStyle'
-import {IntroPanel} from '../homepage/style'
+import {BasicSection} from '../basicStyle'
+import {IntroPanel} from '../homePage/style'
 
 //--PanelSection
 

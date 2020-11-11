@@ -8,7 +8,7 @@ const blogPage = ({data}) => {
 	return (
     <BlogPageWrapper>
       <Row justify="space-around" align="middle">
-        <Col span={16}>
+        <Col xxl={16} xl={16} md={20} sm={20} xs={22} >
           <article className="blog-wrapper">
             <h3 className="blog-title">{data.markdownRemark.frontmatter.title}</h3>
             <div className="blog-date">{data.markdownRemark.frontmatter.date}</div>
