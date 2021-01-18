@@ -1,0 +1,30 @@
+{
+  "entrySection": {
+    "wishASport": {
+      "title": "Wish A Sport Wish",
+      "description": "Find a sport you wish to PLAY Sport"
+    },
+    "wishAClass": {
+      "title": "Wish A Class Class",
+      "description": "Find a subject you wish to LEARN Class"
+    },
+    "english": {
+      "title": "Overseas Sports & Education",
+      "description": "**PLAY** and **LEARN** anywhere, anytime."
+    },
+    "chinese": {
+      "title": "Overseas Sports & Education",
+      "description": "运动，学习， 无时无刻，无处不在."
+    }
+  },
+  "aboutSection": {
+    "english": {
+      "title": "About Section",
+      "description": "**Overseas Sports and Education** Inc. (OSE) serves as a multi-platform organization which focuses on sports and wellness; sporting news; culture and education; as well as providing resources for studying abroads.\n\n\n\nOSE exercises its missions through two main streams: **wish a sport** and **wish a book**\n\nWish a sport supports the community with easy access to sports and wellbeing. This program provides resources for community members the resources and tools to participate in sports such as a space to play organized sports, and training. We are a firm believer in investing in young leaders, which through our program, we offer opportunities for members to take on leadership roles such as coaching and various volunteer opportunities within the organization."
+    },
+    "chinese": {
+      "title": "简介",
+      "description": "OSE海外体教是以体育与教育为主，服务于大众\n\n打造集“体育培训+赛事活动+文化教育+留学就业”于一身的综合性信息平台。\n\n平台分为两大服务板块：**wish a sport** 和 **wish a book**\n\n**Wish a sport** 帮助所有想参与体育运动的人提供场地，举办和承办赛事，体育培训；为体育机构和教练提供推广与资源共享等服务；\n\n**Wish a book** 并为大众分享全领域的文化学习资源；连接北美与中国，为体育生提供留学咨询，体育项目培训与比赛资源；为教育机构提供推广和宣传\n\n关注我们\n\n让我们成为您参与体育运动，寻找教育资源的得力助手！"
+    }
+  }
+}
