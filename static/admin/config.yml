@@ -47,9 +47,9 @@ collections:
   - name: pageContent
     label: Page-Content
     files:
-    - file: src/pageContent/AboutPage.json
-      name: AboutPage
-      label: About-Page
+    - file: src/pageContent/MainPage.json
+      name: mainPage
+      label: Main-Page
       fields: 
         - name: entrySection
           label: Entry-Section
@@ -59,15 +59,93 @@ collections:
               label: WishASport
               widget: object
               fields: 
-                - {name: title, label: Title, widget: string }
-                - {name: description, label: Description, widget: string }
+               - name: english
+                 label: English
+                 widget: object
+                 fields:
+                    - {name: title, label: Title, widget: string }
+                    - {name: description, label: Description, widget: text }
+               - name: chinese
+                 label: Chinese
+                 widget: object
+                 fields:
+                    - {name: title, label: Title, widget: string }
+                    - {name: description, label: Description, widget: text }
             - name: wishAClass
               label: WishAClass
               widget: object
               fields: 
-                - {name: title, label: Title, widget: string }
-                - {name: description, label: Description, widget: string }
-    
+                 - name: english
+                   label: English
+                   widget: object
+                   fields:
+                    - {name: title, label: Title, widget: string }
+                    - {name: description, label: Description, widget: text }
+                 - name: chinese
+                   label: Chinese
+                   widget: object
+                   fields:
+                    - {name: title, label: Title, widget: string }
+                    - {name: description, label: Description, widget: text }
+    - file: src/pageContent/AboutPage.json
+      name: aboutPage
+      label: About-Page
+      fields: 
+        - name: entrySection
+          label: Entry-Section
+          widget: object
+          fields: 
+           - name: english
+             label: english
+             widget: object
+             fields:
+              - {name: title, label: Title, widget: string }
+              - {name: description, label: Description, widget: markdown }
+           - name: chinese
+             label: Chinese
+             widget: object
+             fields:
+              - {name: title, label: Title, widget: string }
+              - {name: description, label: Description, widget: markdown }
+        - name: aboutSection
+          label: About-Section
+          widget: object
+          fields: 
+           - name: english
+             label: english
+             widget: object
+             fields:
+              - {name: title, label: Title, widget: string }
+              - {name: description, label: Description, widget: markdown }
+           - name: chinese
+             label: Chinese
+             widget: object
+             fields:
+              - {name: title, label: Title, widget: string }
+              - {name: description, label: Description, widget: markdown }
+        - name: verticalPanel
+          label: verticalPanel
+          widget: list
+          require: false
+          allow_add: true
+          fields: 
+            - name: panel
+              label: Panel
+              widget: object
+              fields:
+                 - name: english
+                   label: English
+                   widget: object
+                   fields:
+                     - {name: title, label: Title, widget: string }
+                     - {name: description, label: Description, widget: markdown }
+                 - name: chinese
+                   label: Chinese
+                   widget: object
+                   fields:
+                     - {name: title, label: Title, widget: string }
+                     - {name: description, label: Description, widget: markdown }
+
             
 
 
