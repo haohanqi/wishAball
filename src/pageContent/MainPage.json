@@ -1,0 +1,24 @@
+{
+  "entrySection": {
+    "wishASport": {
+      "english": {
+        "title": "Wish A Sport ",
+        "description": "Find a sport you wish to PLAY\n"
+      },
+      "chinese": {
+        "title": "Wish A Sport ",
+        "description": "Find a sport you wish to PLAY\n"
+      }
+    },
+    "wishAClass": {
+      "english": {
+        "title": "Wish A Book",
+        "description": "Find a subject you wish to LEARN\n"
+      },
+      "chinese": {
+        "title": "Wish A Book",
+        "description": "Find a subject you wish to LEARN\n"
+      }
+    }
+  }
+}
