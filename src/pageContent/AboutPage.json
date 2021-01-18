@@ -2,11 +2,11 @@
   "entrySection": {
     "wishASport": {
       "title": "Wish A Sport",
-      "description": "Find a sport you wish to PLAY"
+      "description": "Find a sport you wish to PLAY Sport"
     },
     "wishAClass": {
       "title": "Wish A Class",
-      "description": "Find a subject you wish to LEARN"
+      "description": "Find a subject you wish to LEARN Class"
     }
   }
 }
