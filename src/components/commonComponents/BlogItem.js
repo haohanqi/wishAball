@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { BlogTitle, LargeDes} from '../basicStyle'
 import { BlogItemWrapper } from './style'
 
@@ -15,7 +16,7 @@ const BlogItem = ({width,padding,blog}) => {
 				{blog.excerpt}
 			</LargeDes>
 			<div className="readMore-button">
-				<Link to={blog.frontmatter.path}>Read More</Link>
+				<AniLink paintDrip hex="#fafafa" to={blog.frontmatter.path}>Read More</AniLink>
 			</div>
 			
 		</BlogItemWrapper>

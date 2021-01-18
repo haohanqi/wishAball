@@ -12,10 +12,15 @@ export const SearchPanel = styled(IntroPanel)`
 	max-width:380px;
 	min-height:380px;
 	.panelTitle{
-		color:${basicColor.primaryColor};
+		margin-bottom:20px;
+		font-size:1.5rem;
+		color:${basicColor.highlightColor};
 	}
 	.panelDes{
+		width:100%;
 		color:${basicColor.primaryColor};
+		font-size:1.35rem;
+		font-weight:400;
 		opacity:1;
 	}
 

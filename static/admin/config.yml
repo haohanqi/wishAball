@@ -44,3 +44,31 @@ collections:
               - {name: img, label: Img, widget: image}
               - {name: info, label: Info, widget: text} 
 
+  - name: pageContent
+    label: Page-Content
+    files:
+    - file: src/pageContent/AboutPage.json
+      name: AboutPage
+      label: About-Page
+      fields: 
+        - name: entrySection
+          label: Entry-Section
+          widget: object
+          fields: 
+            - name: wishASport
+              label: WishASport
+              widget: object
+              fields: 
+                - {name: title, label: Title, widget: string }
+                - {name: description, label: Description, widget: string }
+            - name: wishAClass
+              label: WishAClass
+              widget: object
+              fields: 
+                - {name: title, label: Title, widget: string }
+                - {name: description, label: Description, widget: string }
+  
+            
+
+
+

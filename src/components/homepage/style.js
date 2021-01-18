@@ -52,7 +52,7 @@ export const EntrySectionWrapper = styled(BasicSection)`
 		display:block;
 		background-image:url(${props => props.src});
 		background-repeat:no-repeat;
-		background-size: cover;
+		background-size: contain;
 		opacity: 0.8;
 		position: absolute;
 		top: 0;
@@ -183,6 +183,8 @@ export const IntroPanel = styled.div`
 	}
 
 	.panelTitle{
+		width:100%;
+		text-align:left;
 		font-size:1.5rem;
 		font-weight:900;
 		color:${basicColor.primaryColor};

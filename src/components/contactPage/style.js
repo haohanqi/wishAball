@@ -62,6 +62,15 @@ export const ContactFormWrapper = styled.div`
 			background-color:black;
 			color:white;
 		}
+
+		@media only screen and (max-width:480px){
+			input{
+				width:100%;
+			}
+			textarea{
+				width:100%;
+			}
+		}
 	}
 
 `

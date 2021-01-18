@@ -125,10 +125,10 @@ export const MobileHeaderWrapper = styled.header`
 
 export const MobileNavItem = styled(NavItem)`
 	font-size:2rem;
+	opacity:0;
+	transform: translateY(-30);
 	@media only screen and (max-width:480px){
-
-			display:block;
-
+		display:block;
 	}
 `
 
@@ -189,7 +189,6 @@ export const FooterItemWrapper = styled.div`
 		flex-direction:row;
 		justify-content:flex-start;
 		align-items:center;
-		text-align:left;
 		font-size:1.1rem;
 		margin-bottom:20px;
 		color:${basicColor.primaryColor};
@@ -204,7 +203,13 @@ export const FooterItemWrapper = styled.div`
 	@media only screen and (max-width:480px){
 		align-items:flex-start;
 		padding:5%;
-	}	
+	}
+	
+	@media only screen and (min-width:768px){
+		.footer-contact{
+			justify-content:center;
+		}
+	}
 
 `
 

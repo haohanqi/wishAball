@@ -20,6 +20,7 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       },
     },
+    `gatsby-plugin-transition-link`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -41,19 +42,22 @@ module.exports = {
     `gatsby-plugin-antd`,
     `gatsby-plugin-netlify-cms`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Lato`,
-            variants: [`900`, `400`, `700`, `regular`, `bold`]
-          },
-          {
-            family: `Open Sans`,
-            variants: [`400`, `700`]
-          },
-        ],
-      },
-    },
-  ],
+        fonts: {
+          google: [
+            {
+              family: `Lato`,
+              variants: [`900`, `400`, `700`, `regular`, `bold`]
+            },
+            {
+              family: `Open Sans`,
+              variants: [`400`, `700`]
+            },
+          ],
+        }
+    }
+  }
+]
+
 }

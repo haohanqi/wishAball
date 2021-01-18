@@ -1,8 +1,8 @@
-import { Link } from "gatsby"
 import React,{useState,useEffect} from "react"
 import { NavWrapper, Nav, NavItem, Logo, LogoText, Hum, MobileHeaderWrapper, MobileNavItem} from './style'
 import LogoImage from '../../images/Logo.png'
 import gsap from 'gsap'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const MobileHeader = ({open,setClose}) => {
 
@@ -10,10 +10,10 @@ const MobileHeader = ({open,setClose}) => {
     //open animation
     const show = gsap.timeline()
     show.set("body",{overflowY:"hidden"})
-        .from(".mobile-header-wrapper", 0.3,{padding:0,width:0})
+        .from(".mobile-header-wrapper", 0.3,{padding:0,width:0,opacity:0})
         .from(".close-button",0.2,{x:100,opacity:0})
-        .from(".mobile-nav-item",0.3,{y:-30,opacity:0,stagger:0.2})
-  })
+        .to(".mobile-nav-item",0.3,{y:0,opacity:1,stagger:0.2})
+  },[])
 
   const closeAnimation = () => {
     const fade = gsap.timeline({
@@ -32,17 +32,17 @@ const MobileHeader = ({open,setClose}) => {
       <div className="close-button" onClick={() => { closeAnimation() }}>Close</div>
       
       <MobileNavItem className="mobile-nav-item">
-        <Link to="/">Home</Link>
+        <AniLink paintDrip hex="#fafafa" to="/">Home</AniLink>
       </MobileNavItem>
 
       <MobileNavItem className="mobile-nav-item">
-        <Link to="/newsPage">News</Link>
+        <AniLink paintDrip hex="#fafafa" to="/newsPage">News</AniLink>
       </MobileNavItem>
       <MobileNavItem className="mobile-nav-item">
-        <Link to="/searchPage">Search</Link>
+        <AniLink paintDrip hex="#fafafa" to="/aboutPage">Search</AniLink>
       </MobileNavItem>
       <MobileNavItem className="mobile-nav-item">
-        <Link to="/contactPage">Contact</Link>
+        <AniLink paintDrip hex="#fafafa" to="/contactPage">Contact</AniLink>
       </MobileNavItem>
     </MobileHeaderWrapper>
   )
@@ -59,11 +59,11 @@ const MobileHeader = ({open,setClose}) => {
       <NavWrapper>
         <Nav>
           <NavItem>
-            <Link to="/">Home</Link>
+            <AniLink paintDrip hex="#fafafa" to="/">Home</AniLink>
           </NavItem>
 
           <NavItem>
-            <Link to="/newsPage">News</Link>
+            <AniLink paintDrip hex="#fafafa" to="/newsPage">News</AniLink>
           </NavItem>
 
           <Logo>
@@ -73,11 +73,11 @@ const MobileHeader = ({open,setClose}) => {
           <LogoText>Wish A Ball</LogoText>
 
           <NavItem>
-            <Link to="/searchPage">Search</Link>
+            <AniLink paintDrip hex="#fafafa" to="/aboutPage">About</AniLink>
           </NavItem>
 
           <NavItem>
-            <Link to="/contactPage">Contact</Link>
+            <AniLink paintDrip hex="#fafafa"to="/contactPage">Contact</AniLink>
           </NavItem>
 
           <Hum onClick={()=>{setOpen(true)}}>

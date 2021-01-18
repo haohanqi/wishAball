@@ -6,6 +6,7 @@ import {setCate} from './state/actions/actions'
 import  scrollTo  from 'gsap/ScrollToPlugin'
 import { SearchEntrySectionWrapper, SearchPanel} from './style'
 import {BasicTitleStyle} from '../homePage/style'
+import aboutPageContent from '../../pageContent/AboutPage.json'
 
 
 const SearchEntrySection = ({setCate}) => {
@@ -23,10 +24,9 @@ const SearchEntrySection = ({setCate}) => {
 			<Row justify="space-around" align="middle">
 				<Col xxl={12} xl={12} lg={12} sm={24} xs={24} align="center">
 					<SearchPanel src="https://images.unsplash.com/photo-1584129450613-8fde3f4bd426?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
-						<div className="panelTitle">Wish A Sport</div>
+						<div className="panelTitle">{aboutPageContent.entrySection.wishASport.title}</div>
 						<div className="panelDes">
-							Contrary to popular belief, Lorem Ipsum is not simply random 
-							has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years ol
+							{aboutPageContent.entrySection.wishASport.description}
 						</div> 
 						<div className="button-row">
 							<BasicTitleStyle width="120px" onClick={() => { searchClick('sport') }}>Search</BasicTitleStyle>
@@ -36,10 +36,9 @@ const SearchEntrySection = ({setCate}) => {
 
 				<Col xxl={12} xl={12} lg={12} sm={24} xs={24} align="center">
 					<SearchPanel src="https://images.unsplash.com/photo-1526391922840-891b87f9af1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
-						<div className="panelTitle">Wish A Class</div>
+						<div className="panelTitle">{aboutPageContent.entrySection.wishAClass.title}</div>
 						<div className="panelDes">
-							Contrary to popular belief, Lorem Ipsum is not simply random
-							has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years ol
+							{aboutPageContent.entrySection.wishASport.description}
 						</div>
 						<div className="button-row">
 							<BasicTitleStyle width="120px" onClick={() => { searchClick('class') }}>Search</BasicTitleStyle>

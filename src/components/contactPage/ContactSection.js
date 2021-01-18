@@ -11,7 +11,7 @@ const ContactSection = () => {
 	return (
 		<ContactSectionWrapper>
 			<Row justify="space-around" align="middle">
-				<Col span={10}>
+				<Col xxl={10} xl={10} lg={10} md={10} sm={20} xs={24}>
 					<ContactInfoWrapper>
 						<BasicTitleStyle>Get In Tach</BasicTitleStyle>
 						<ContactInfoDes>We are 24h avalible, if you have any question. Feel free to contact us.</ContactInfoDes>
@@ -37,7 +37,7 @@ const ContactSection = () => {
 						</ContactInfo>
 					</ContactInfoWrapper>
 				</Col>
-				<Col span={10}>
+				<Col xxl={10} xl={10} lg={10} md={10} sm={20} xs={24}>
 					<ContactFormWrapper>
 						<form className="contact-form-container" method="post" data-netlify="true" data-netlify-honeypot="bot-field" name="contact">
 							<BasicTitleStyle>Let's have a talk</BasicTitleStyle>
