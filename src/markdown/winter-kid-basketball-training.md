@@ -4,6 +4,7 @@ date: 2020-11-10T16:12:24.198Z
 title: Winter kid basketball training
 author: haohanqi
 ---
+
 ![](/assets/40g09kop55fyh86yzdnx.png)
 
 ### **The winter kids basketball training will begin at 2021 fall**

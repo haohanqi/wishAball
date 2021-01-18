@@ -1,20 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {GlobalStyle} from './basicStyle'
+import { GlobalStyle } from "./basicStyle"
 import Header from "./commonComponents/Header"
-import Footer from './commonComponents/Footer'
+import Footer from "./commonComponents/Footer"
 
 const Layout = ({ children }) => {
   return (
     <>
-      <GlobalStyle/>
-      <Header/>
+      <GlobalStyle />
+      <Header />
       <div>
         <main>{children}</main>
-        <Footer>
-          © 
-        </Footer>
-       
+        <Footer>©</Footer>
       </div>
     </>
   )

@@ -48,16 +48,15 @@ module.exports = {
           google: [
             {
               family: `Lato`,
-              variants: [`900`, `400`, `700`, `regular`, `bold`]
+              variants: [`900`, `400`, `700`, `regular`, `bold`],
             },
             {
               family: `Open Sans`,
-              variants: [`400`, `700`]
+              variants: [`400`, `700`],
             },
           ],
-        }
-    }
-  }
-]
-
+        },
+      },
+    },
+  ],
 }

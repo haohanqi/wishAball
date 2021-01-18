@@ -1,5 +1,5 @@
 export const ADD_CITY_FILTER = "addCityFilter"
 export const ADD_SPORT_FILTER = "addSportFilter"
 export const SET_CATE = "setCate"
-export const SET_RESULT="setResult"
-export const SHOW_RESULT ="showResult"
+export const SET_RESULT = "setResult"
+export const SHOW_RESULT = "showResult"

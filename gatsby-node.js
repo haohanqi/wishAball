@@ -6,29 +6,28 @@
 
 // You can delete this file if you're not using it
 
-exports.createPages = async ({ actions: { createPage }, graphql})=>{
-	const detailsPage = require('./src/data/wishASportData.json')
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
+  const detailsPage = require("./src/data/wishASportData.json")
 
-	detailsPage.wishasport.forEach(page=>{
-		createPage({
-			path:`wishaball/${page.path}`,
-			component:require.resolve('./src/templete/detailsPage'),
-			context:{
-				title:page.organization,
-				info:page.info,
-				address:page.address,
-				phone:page.phone,
-				website:page.website,
-				sport:page.sport,
-				image:page.img
-			}
-		})
-	})
+  detailsPage.wishasport.forEach(page => {
+    createPage({
+      path: `wishaball/${page.path}`,
+      component: require.resolve("./src/templete/detailsPage"),
+      context: {
+        title: page.organization,
+        info: page.info,
+        address: page.address,
+        phone: page.phone,
+        website: page.website,
+        sport: page.sport,
+        image: page.img,
+      },
+    })
+  })
 
+  const blogPostTemplate = require.resolve("./src/templete/blogPage.js")
 
-	const blogPostTemplate = require.resolve('./src/templete/blogPage.js')
-
-	const result = await graphql(`
+  const result = await graphql(`
     {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
@@ -45,18 +44,17 @@ exports.createPages = async ({ actions: { createPage }, graphql})=>{
     }
   `)
 
-	if (result.errors) {
-		console.log('some error with graphql')
-	}
+  if (result.errors) {
+    console.log("some error with graphql")
+  }
 
-	result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-		createPage({
-			path: node.frontmatter.path,
-			component: blogPostTemplate,
-			context: {}
-		})
-	})
-
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: blogPostTemplate,
+      context: {},
+    })
+  })
 }
 
 // exports.createPages = async ({actions,graphql}) =>{
