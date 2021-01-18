@@ -9,7 +9,7 @@ import WorkWithUs from "../components/homePage/WorkWithUsSection"
 import NewsSection from "../components/homePage/NewsSection"
 import { graphql } from "gatsby"
 
-const SearchPage = ({data}) => {
+const AboutPage = ({data}) => {
   useEffect(() => {
     //const t1 = gsap.timeline()
     // gsap.set("body", { overflowY: "hidden" })
@@ -40,7 +40,7 @@ const SearchPage = ({data}) => {
   )
 }
 
-export default SearchPage
+export default AboutPage
 
 //get first two blog post
 export const pageQuery = graphql`

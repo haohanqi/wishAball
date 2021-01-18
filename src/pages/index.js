@@ -6,11 +6,10 @@ import SearchSection from "../components/searchPage/SearchSection"
 import Advertisement from "../components/commonComponents/Advertiesment"
 
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
   useEffect(() => {
     gsap.set("body", { overflowY: "auto" })
   })
-
   return (
     <Layout>
       <SearchEntrySection />
