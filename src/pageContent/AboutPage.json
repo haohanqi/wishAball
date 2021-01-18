@@ -1,0 +1,12 @@
+{
+  "entrySection": {
+    "wishASport": {
+      "title": "Wish A Sport",
+      "description": "Find a sport you wish to PLAY"
+    },
+    "wishAClass": {
+      "title": "Wish A Class",
+      "description": "Find a subject you wish to LEARN"
+    }
+  }
+}
