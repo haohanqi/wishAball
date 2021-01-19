@@ -1,0 +1,32 @@
+{
+  "intro": {
+    "english": {
+      "description": "OSE [Overseas Sports and Education Inc.] serves as a multi-platform organization which focuses on sports and wellness; sporting news; culture and education; as well as providing resources for studying abroads. At OSE, we are a reliable and trustful platform to find all useful resources. \n",
+      "title": "About Us"
+    },
+    "chinese": {
+      "title": "关于我们",
+      "description": "OSE [Overseas Sports and Education Inc.] serves as a multi-platform organization which focuses on sports and wellness; sporting news; culture and education; as well as providing resources for studying abroads. At OSE, we are a reliable and trustful platform to find all useful resources. "
+    }
+  },
+  "links": [
+    {
+      "linkItem": {
+        "linkName": "osecanada",
+        "linkAddress": "http://osecanada.com"
+      }
+    },
+    {
+      "linkItem": {
+        "linkAddress": "https://oseca.square.site",
+        "linkName": "OSE Membership"
+      }
+    },
+    {
+      "linkItem": {
+        "linkName": "Overseas Basketball Association",
+        "linkAddress": "https://overseas-basketball.com"
+      }
+    }
+  ]
+}
