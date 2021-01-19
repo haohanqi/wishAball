@@ -8,6 +8,8 @@ import {
   TopNewsItemWrapper,
   TopNewsTitle,
 } from "./style"
+import ReactMarkdown from "react-markdown"
+import aboutPageContent from '../../pageContent/AboutPage.json'
 
 const TopNewsItem = () => {
   return (
@@ -25,10 +27,9 @@ const EntrySection = () => {
     <EntrySectionWrapper src="https://images.unsplash.com/photo-1520399636535-24741e71b160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
       <Row justify="space-between" align="bottom">
         <Col xxl={12} xl={12} md={12} lg={12} sm={24} xs={24}>
-          <EntryTitle className="entry-title">Wish A Ball</EntryTitle>
+          <EntryTitle className="entry-title">{aboutPageContent.entrySection.english.title}</EntryTitle>
           <EntryDes className="entry-des">
-            Contrary to popular belief, Lorem Ipsum is not simply random has
-            roots in a piece of classical Latin literature from 45 BC
+            <ReactMarkdown>{aboutPageContent.entrySection.english.description }</ReactMarkdown>
           </EntryDes>
         </Col>
 

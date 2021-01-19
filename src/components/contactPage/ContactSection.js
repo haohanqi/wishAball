@@ -19,7 +19,7 @@ const ContactSection = () => {
       <Row justify="space-around" align="middle">
         <Col xxl={10} xl={10} lg={10} md={10} sm={20} xs={24}>
           <ContactInfoWrapper>
-            <BasicTitleStyle>Get In Tach</BasicTitleStyle>
+            <BasicTitleStyle>Contact</BasicTitleStyle>
             <ContactInfoDes>
               We are 24h avalible, if you have any question. Feel free to
               contact us.

@@ -7,19 +7,16 @@ import {
   IntroPanel,
 } from "./style"
 import { Row, Col } from "antd"
+import ReactMarkdown from 'react-markdown'
 
-const IntroSection = () => {
+const IntroSection = ({content}) => {
   return (
     <IntroSectionWrapper>
       <Row style={{ height: "100%" }} justify="space-between" align="middle">
         <Col xxl={12} xl={10} lg={18} sm={20} xs={20} align="left">
-          <BasicTitleStyle width="150px">About Us</BasicTitleStyle>
+        <BasicTitleStyle width="300px">{content.aboutSection.english.title}</BasicTitleStyle>
           <IntroDes>
-            Contrary to popular belief, Lorem Ipsum is not simply random has
-            roots in a piece of classical Latin literature from 45 BC, making it
-            over 2000 years old. Richard McClintock, a Latin professor at
-            Hampden-Sydney College in Virginia, looked up one of the more
-            obscure Latin words
+            <ReactMarkdown>{content.aboutSection.english.description}</ReactMarkdown>
           </IntroDes>
         </Col>
 

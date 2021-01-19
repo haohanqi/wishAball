@@ -55,9 +55,11 @@ export const EntrySectionWrapper = styled(BasicSection)`
   &:after {
     content: "";
     display: block;
+    width:100%;
+    max-height: 100vh;
     background-image: url(${props => props.src});
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     opacity: 0.8;
     position: absolute;
     top: 0;
@@ -65,6 +67,7 @@ export const EntrySectionWrapper = styled(BasicSection)`
     bottom: 0;
     right: 0;
     z-index: -1;
+    overflow:hidden;
   }
 
   @media only screen and (max-width: 768px) {

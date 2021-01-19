@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 `
 export const SectionTitle = styled.h1`
-  font-size: 6rem;
+  font-size: 3.5rem;
   font-weight: 900;
   color: ${basicColor.highlightColor};
   @media only screen and (max-width: 480px) {

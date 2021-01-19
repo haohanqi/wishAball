@@ -145,6 +145,92 @@ collections:
                    fields:
                      - {name: title, label: Title, widget: string }
                      - {name: description, label: Description, widget: markdown }
+        - name: whatDoWeDoSection
+          label: WhatDoWeDoSection
+          widget: list
+          allow_add: true
+          fields: 
+            - name: whatDoWeDo
+              label: WhatDoWeDo
+              widget: object
+              fields:
+                - name: english
+                  label: English
+                  widget: object
+                  fields: 
+                    - {name: title, label: Title, widget: string}
+                    - {name: description, label: Title, widget: string}
+                - name: chinese
+                  label: Chinese
+                  widget: object
+                  fields: 
+                    - {name: title, label: Title, widget: string}
+                    - {name: description, label: Title, widget: string}
+        - name: workWithUs
+          lable: WorkWithUs
+          widget: list
+          allow_add: true
+          fields: 
+            - name: work
+              label: Work
+              widget: object
+              fields: 
+                - name: chinese
+                  label: Chinese
+                  widget: object
+                  fields:
+                    - {name: workDescription, label: WorkDescription, widget: text}
+                - name: english
+                  label: English
+                  widget: object
+                  fields:
+                    - {name: workDescription, label: WorkDescription, widget: text}
+    - file: src/pageContent/ContactInfo.json 
+      name: contactInfo
+      label: ContactInfo
+      fields: 
+        - {name: email, label: Email, widget: string, required: false}
+        - {name: phone, label: Phone, widget: string, required: false}
+        - {name: location, label: Location, widget: string, required: false}
+        - name: socalMediaLink
+          label: SocalMediaLink
+          required: false
+          widget: object
+          fields:
+            - {name: insLink, label: InsLink, widget: string, required: false}
+            - {name: weChetLink, label: WechetLink, widget: string, required: false}
+    - file: src/pageContent/Footer.json
+      name: footer
+      label: Footer   
+      fields: 
+        - name: intro
+          label: Introduction
+          widget: object
+          fields: 
+            - name: chinese
+              label: Chinese
+              widget: object
+              required: false
+              fields: 
+                - {name: title, label: Title, widget: string}
+                - {name: description, label: Description, widget: text}
+            - name: english
+              label: English
+              widget: object
+              fields: 
+                - {name: title, label: Title, widget: string}
+                - {name: description, label: Description, widget: text}
+        - name: links
+          label: Links
+          widget: list
+          allow_add: true
+          fields: 
+            - name: linkItem
+              label: LinkItem
+              widget: object
+              fields:
+                - {name: linkName, label: LinkName, widget: string}
+                - {name: linkAddress, label: LinkAddress, widget: string}
 
             
 
