@@ -18,5 +18,73 @@
       "title": "简介",
       "description": "OSE海外体教是以体育与教育为主，服务于大众\n\n打造集“体育培训+赛事活动+文化教育+留学就业”于一身的综合性信息平台。\n\n平台分为两大服务板块：**wish a sport** 和 **wish a book**\n\n**Wish a sport** 帮助所有想参与体育运动的人提供场地，举办和承办赛事，体育培训；为体育机构和教练提供推广与资源共享等服务；\n\n**Wish a book** 并为大众分享全领域的文化学习资源；连接北美与中国，为体育生提供留学咨询，体育项目培训与比赛资源；为教育机构提供推广和宣传\n\n关注我们\n\n让我们成为您参与体育运动，寻找教育资源的得力助手！"
     }
-  }
+  },
+  "whatDoWeDoSection": [
+    {
+      "whatDoWeDo": {
+        "english": {
+          "title": "Wish A Sport ",
+          "description": "Find a sport you like to play"
+        },
+        "chinese": {
+          "title": "Wish A Sport ",
+          "description": "找到属于你自己的运动"
+        }
+      }
+    },
+    {
+      "whatDoWeDo": {
+        "english": {
+          "title": "Wish A Book",
+          "description": "Find a subject you like to learn"
+        },
+        "chinese": {
+          "title": "Wish A Book",
+          "description": "找到自己想学的科目"
+        }
+      }
+    }
+  ],
+  "workWithUs": [
+    {
+      "work": {
+        "english": {
+          "workDescription": "Training classes and marketing promotions for teams, coaches, players, athletes and everyone.\n"
+        },
+        "chinese": {
+          "workDescription": "针对球队，教练，球员，运动员的训练课程与市场营销"
+        }
+      }
+    },
+    {
+      "work": {
+        "english": {
+          "workDescription": "Partnership with sports clubs, organizations, education institutions and other business \n"
+        },
+        "chinese": {
+          "workDescription": "体育与教育机构，团体，商业合作\n"
+        }
+      }
+    },
+    {
+      "work": {
+        "english": {
+          "workDescription": "Job opportunity "
+        },
+        "chinese": {
+          "workDescription": "工作求职"
+        }
+      }
+    },
+    {
+      "work": {
+        "english": {
+          "workDescription": "Advertisement and sponsorship\n"
+        },
+        "chinese": {
+          "workDescription": " 广告与赞助\n"
+        }
+      }
+    }
+  ]
 }
