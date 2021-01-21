@@ -53,6 +53,7 @@ export const SearchPanel = styled.div`
     opacity: 1;
     position: absolute;
     width:100%;
+    max-height:100vh;
     top: 0;
     left: 0;
     bottom: 0;
