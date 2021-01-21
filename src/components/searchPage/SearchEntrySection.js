@@ -6,6 +6,9 @@ import { setCate } from "./state/actions/actions"
 import scrollTo from "gsap/ScrollToPlugin"
 import { SearchEntrySectionWrapper, SearchPanel } from "./style"
 import { BasicTitleStyle } from "../homePage/style"
+import searchEntryCover1 from '../../images/searchEntryCover1.jpeg'
+import searchEntryCover2 from '../../images/searchEntryCover2.jpeg'
+
 
 const SearchEntrySection = ({ setCate,content }) => {
   useEffect(() => {
@@ -20,7 +23,7 @@ const SearchEntrySection = ({ setCate,content }) => {
     <SearchEntrySectionWrapper>
       <Row justify="space-around" align="middle">
         <Col xxl={12} xl={12} lg={12} sm={24} xs={24} align="center">
-          <SearchPanel src="https://images.unsplash.com/photo-1584129450613-8fde3f4bd426?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+          <SearchPanel src={searchEntryCover1}>
             <div className="panelTitle">
               {
               //content.entrySection.wishASport.english.title
@@ -46,7 +49,7 @@ const SearchEntrySection = ({ setCate,content }) => {
         </Col>
 
         <Col xxl={12} xl={12} lg={12} sm={24} xs={24} align="center">
-          <SearchPanel src="https://images.unsplash.com/photo-1526391922840-891b87f9af1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+          <SearchPanel src={searchEntryCover2}>
             <div className="panelTitle">
               {
               //content.entrySection.wishAClass.english.title

@@ -8,7 +8,7 @@ import mainPageContent from "../pageContent/MainPage.json"
 const IndexPage = () => {
   useEffect(() => {
     gsap.set("body", { overflowY: "auto" })
-  })
+  },[])
   return (
     <Layout>
       <SearchEntrySection content={mainPageContent}/>

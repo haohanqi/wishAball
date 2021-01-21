@@ -9,7 +9,7 @@ import NewsListSection from "../components/newsPage/NewsListSection"
 const NewsPage = ({ data }) => {
   useEffect(() => {
     gsap.set("body", { overflowY: "auto" })
-  })
+  },[])
 
   return (
     <Layout>

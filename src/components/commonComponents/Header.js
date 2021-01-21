@@ -63,7 +63,7 @@ const MobileHeader = ({ open, setClose }) => {
       </MobileNavItem>
       <MobileNavItem className="mobile-nav-item">
         <AniLink paintDrip hex="#fafafa" to="/aboutPage">
-          Search
+          About
         </AniLink>
       </MobileNavItem>
       <MobileNavItem className="mobile-nav-item">

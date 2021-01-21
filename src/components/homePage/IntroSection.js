@@ -11,9 +11,6 @@ import ReactMarkdown from 'react-markdown'
 import sal from 'sal.js'
 
 const IntroSection = ({content,language}) => {
-  useEffect(() => {
-    sal()  
-  })
   return (
     <IntroSectionWrapper>
       <Row style={{ height: "100%" }} justify="space-between" align="middle">

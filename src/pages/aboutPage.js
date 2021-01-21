@@ -13,7 +13,7 @@ import { connect } from "react-redux"
 const AboutPage = ({data,language}) => {
   useEffect(() => {
     gsap.set("body", { overflowY: "auto" })
-  })
+  },[])
 
   return (
     <Layout>

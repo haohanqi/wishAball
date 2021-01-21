@@ -48,10 +48,10 @@ export const SearchPanel = styled(IntroPanel)`
     }
   }
 
-  @media only screen and (max-width: 480px) and (min-width: 320px) {
+  @media only screen and (max-width: 480px) and (min-width:320px) {
     margin-top: 60px;
     max-width: 400px;
-    height: 400px;
+    min-height: 400px;
     &:hover {
       transform: scale(1);
     }
