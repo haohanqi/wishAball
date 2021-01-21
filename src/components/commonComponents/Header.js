@@ -22,7 +22,7 @@ const MobileHeader = ({ open, setClose }) => {
       .from(".mobile-header-wrapper", 0.3, { padding: 0, width: 0, opacity: 0 })
       .from(".close-button", 0.2, { x: 100, opacity: 0 })
       .to(".mobile-nav-item", 0.3, { y: 0, opacity: 1, stagger: 0.2 })
-  }, [])
+  }, [open])
 
   const closeAnimation = () => {
     const fade = gsap.timeline({
@@ -61,11 +61,13 @@ const MobileHeader = ({ open, setClose }) => {
           News
         </AniLink>
       </MobileNavItem>
+
       <MobileNavItem className="mobile-nav-item">
         <AniLink paintDrip hex="#fafafa" to="/aboutPage">
           About
         </AniLink>
       </MobileNavItem>
+      
       <MobileNavItem className="mobile-nav-item">
         <AniLink paintDrip hex="#fafafa" to="/contactPage">
           Contact

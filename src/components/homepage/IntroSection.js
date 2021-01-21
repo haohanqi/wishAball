@@ -8,7 +8,6 @@ import {
 } from "./style"
 import { Row, Col } from "antd"
 import ReactMarkdown from 'react-markdown'
-import sal from 'sal.js'
 
 const IntroSection = ({content,language}) => {
   return (

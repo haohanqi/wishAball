@@ -8,16 +8,30 @@ export const SearchEntrySectionWrapper = styled(BasicSection)`
   min-height:100vh;
 `
 
-export const SearchPanel = styled(IntroPanel)`
+export const SearchPanel = styled.div`
   max-width: 480px;
   min-height: 480px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 5px 10px;
+  transition: all 0.4s linear;
+  position: relative;
+
   .panelTitle {
+    width: 100%;
+    text-align: left;
+    transition: all 0.4s linear;
     margin-bottom: 20px;
     font-size: 2rem;
     font-weight:900;
     color: ${basicColor.highlightColor};
   }
   .panelDes {
+    text-align: left;
+    transition: all 0.4s linear;
     width: 100%;
     color: ${basicColor.primaryColor};
     font-size: 1.35rem;
@@ -29,6 +43,21 @@ export const SearchPanel = styled(IntroPanel)`
     opacity: 0;
     transition: all 0.3s linear;
   }
+  
+  &:after {
+    display: block;
+    content: "";
+    background-image: url(${props => props.src});
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
 
   &:hover {
     .button-row {
@@ -36,10 +65,13 @@ export const SearchPanel = styled(IntroPanel)`
     }
 
     .panelTitle {
+       transform: translateY(-20px);
       color: ${basicColor.secondaryColor};
     }
 
     .panelDes {
+      opacity: 1;
+      transform: translateY(-30px);
       color: ${basicColor.secondaryColor};
     }
 

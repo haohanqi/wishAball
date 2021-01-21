@@ -89,9 +89,10 @@ export const LogoText = styled(Title)`
 `
 
 export const MobileHeaderWrapper = styled.header`
-  height: 100vh;
+  box-sizing: border-box;
+  height: 100%;
   width: 100%;
-  padding: 5%;
+  padding: 10%;
   z-index: 1;
   position: fixed;
   top: 0;
@@ -99,7 +100,7 @@ export const MobileHeaderWrapper = styled.header`
   background-color: ${basicColor.sideColor};
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 
   .close-button {
@@ -108,12 +109,14 @@ export const MobileHeaderWrapper = styled.header`
     color: ${basicColor.secondaryColor};
     width: 100%;
     text-align: left;
+    margin-bottom:20%;
   }
 `
 
 export const MobileNavItem = styled(NavItem)`
   font-size: 2rem;
   opacity: 0;
+  margin-bottom:20%;
   transform: translateY(-30);
   @media only screen and (max-width: 480px) {
     display: block;
