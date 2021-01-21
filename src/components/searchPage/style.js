@@ -5,14 +5,16 @@ import { IntroPanel, BasicTitleStyle } from "../homePage/style"
 //-- SearchEntrySection
 export const SearchEntrySectionWrapper = styled(BasicSection)`
   margin-top: 30px;
+  min-height:100vh;
 `
 
 export const SearchPanel = styled(IntroPanel)`
-  max-width: 380px;
-  min-height: 380px;
+  max-width: 480px;
+  min-height: 480px;
   .panelTitle {
     margin-bottom: 20px;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight:900;
     color: ${basicColor.highlightColor};
   }
   .panelDes {
@@ -48,6 +50,8 @@ export const SearchPanel = styled(IntroPanel)`
 
   @media only screen and (max-width: 480px) and (min-width: 320px) {
     margin-top: 60px;
+    max-width: 400px;
+    height: 400px;
     &:hover {
       transform: scale(1);
     }

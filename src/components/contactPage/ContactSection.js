@@ -2,8 +2,8 @@ import React from "react"
 import { Row, Col } from "antd"
 import { HiOutlineMail, HiLocationMarker } from "react-icons/hi"
 import { BsPhone } from "react-icons/bs"
-import { FaInstagram, FaYoutube } from "react-icons/fa"
-import { AiFillLinkedin } from "react-icons/ai"
+import { FaInstagram } from "react-icons/fa"
+import { AiFillWechat } from "react-icons/ai"
 import { BasicTitleStyle } from "../homePage/style"
 import {
   ContactSectionWrapper,
@@ -12,12 +12,13 @@ import {
   ContactInfo,
   ContactFormWrapper,
 } from "./style"
+import contactInfo from '../../pageContent/ContactInfo.json'
 
 const ContactSection = () => {
   return (
     <ContactSectionWrapper>
       <Row justify="space-around" align="middle">
-        <Col xxl={10} xl={10} lg={10} md={10} sm={20} xs={24}>
+        <Col xxl={12} xl={12} lg={12} md={12} sm={20} xs={24}>
           <ContactInfoWrapper>
             <BasicTitleStyle>Contact</BasicTitleStyle>
             <ContactInfoDes>
@@ -26,15 +27,15 @@ const ContactSection = () => {
             </ContactInfoDes>
             <ContactInfo>
               <HiOutlineMail className="icon" />
-              <ContactInfoDes>Hohanqi@gmail.com</ContactInfoDes>
+              <ContactInfoDes>{contactInfo.email}</ContactInfoDes>
             </ContactInfo>
             <ContactInfo>
               <BsPhone className="icon" />
-              <ContactInfoDes>647-892-7766</ContactInfoDes>
+              <ContactInfoDes></ContactInfoDes>
             </ContactInfo>
             <ContactInfo>
               <HiLocationMarker className="icon" />
-              <ContactInfoDes>104 avondale ave North York ON</ContactInfoDes>
+              <ContactInfoDes>{contactInfo.location}</ContactInfoDes>
             </ContactInfo>
 
             <BasicTitleStyle>Follow Us</BasicTitleStyle>
@@ -42,12 +43,12 @@ const ContactSection = () => {
               Get lastest update on our social media
             </ContactInfoDes>
             <ContactInfo>
-              <FaInstagram className="icon" />
-              <FaYoutube className="icon" />
-              <AiFillLinkedin className="icon" />
+              <a href={contactInfo.socalMediaLink.insLink}><FaInstagram className="icon" /></a>
+              <a href={contactInfo.socalMediaLink.weChetLink}><AiFillWechat className="icon" /></a>
             </ContactInfo>
           </ContactInfoWrapper>
         </Col>
+
         <Col xxl={10} xl={10} lg={10} md={10} sm={20} xs={24}>
           <ContactFormWrapper>
             <form
@@ -57,7 +58,7 @@ const ContactSection = () => {
               data-netlify-honeypot="bot-field"
               name="contact"
             >
-              <BasicTitleStyle>Let's have a talk</BasicTitleStyle>
+              <BasicTitleStyle>Contact Us</BasicTitleStyle>
               <input type="hidden" name="bot-field" />
               <input type="hidden" name="form-name" value="contact" />
               <input

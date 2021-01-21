@@ -7,7 +7,7 @@ import scrollTo from "gsap/ScrollToPlugin"
 import { SearchEntrySectionWrapper, SearchPanel } from "./style"
 import { BasicTitleStyle } from "../homePage/style"
 
-const SearchEntrySection = ({ setCate }) => {
+const SearchEntrySection = ({ setCate,content }) => {
   useEffect(() => {
     gsap.registerPlugin(scrollTo)
   })
@@ -22,10 +22,15 @@ const SearchEntrySection = ({ setCate }) => {
         <Col xxl={12} xl={12} lg={12} sm={24} xs={24} align="center">
           <SearchPanel src="https://images.unsplash.com/photo-1584129450613-8fde3f4bd426?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
             <div className="panelTitle">
-              
+              {
+              //content.entrySection.wishASport.english.title
+              }
+              WISH A SPORT
             </div>
             <div className="panelDes">
-              
+              {
+                content.entrySection.wishASport.english.description
+              }
             </div>
             <div className="button-row">
               <BasicTitleStyle
@@ -43,10 +48,13 @@ const SearchEntrySection = ({ setCate }) => {
         <Col xxl={12} xl={12} lg={12} sm={24} xs={24} align="center">
           <SearchPanel src="https://images.unsplash.com/photo-1526391922840-891b87f9af1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
             <div className="panelTitle">
-              
+              {
+              //content.entrySection.wishAClass.english.title
+              }
+              WISH A BOOK
             </div>
             <div className="panelDes">
-              
+              {content.entrySection.wishAClass.english.description}
             </div>
             <div className="button-row">
               <BasicTitleStyle

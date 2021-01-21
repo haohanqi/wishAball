@@ -134,9 +134,9 @@ export const FooterItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   width: 90%;
-  height: 290px;
+  min-height: 290px;
   margin: 0 5%;
 
   img {
@@ -165,7 +165,6 @@ export const FooterItemWrapper = styled.div`
   }
 
   .footer-contact {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -187,7 +186,7 @@ export const FooterItemWrapper = styled.div`
 
   @media only screen and (min-width: 768px) {
     .footer-contact {
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 `
@@ -195,8 +194,8 @@ export const FooterItemWrapper = styled.div`
 //--BlogItem
 
 export const BlogItemWrapper = styled.article`
-  width: ${props => props.width};
-  padding: ${props => props.padding};
+  width: 100%;
+  padding: 10px;
   min-height: 300px;
   display: flex;
   flex-direction: column;

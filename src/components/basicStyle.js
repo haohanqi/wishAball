@@ -74,7 +74,7 @@ export const BasicSection = styled.section`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   padding: 5%;
   box-sizing: border-box;
   background-color: ${props => props.backgroundColor};

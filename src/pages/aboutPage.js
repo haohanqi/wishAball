@@ -9,8 +9,8 @@ import WorkWithUs from "../components/homePage/WorkWithUsSection"
 import NewsSection from "../components/homePage/NewsSection"
 import { graphql } from "gatsby"
 import aboutPageContent from '../pageContent/AboutPage.json'
-
-const AboutPage = ({data}) => {
+import { connect } from "react-redux"
+const AboutPage = ({data,language}) => {
   useEffect(() => {
     gsap.set("body", { overflowY: "auto" })
   })
@@ -18,16 +18,23 @@ const AboutPage = ({data}) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <EntrySection content={aboutPageContent}/>
-      <IntroSection content={aboutPageContent}/>
-      <WhatWeDoSection />
+      <EntrySection content={aboutPageContent.entrySection} language={language} />
+      <IntroSection content={aboutPageContent.aboutSection} language={language}/>
+      <WhatWeDoSection content={aboutPageContent.whatDoWeDoSection} language={language}/>
       <NewsSection data={data} />
-      <WorkWithUs />
+      <WorkWithUs content={aboutPageContent.workWithUs} language={language}/>
     </Layout>
   )
 }
 
-export default AboutPage
+const mapStateToProps = (state) => {
+  console.log("language: " + state.homeReducer.language)
+  return {
+    language: state.homeReducer.language
+  }
+}
+
+export default connect(mapStateToProps)(AboutPage)
 
 //get first two blog post
 export const pageQuery = graphql`

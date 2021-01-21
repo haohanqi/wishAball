@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useEffect} from "react"
 import {
   IntroSectionWrapper,
   BasicTitleStyle,
@@ -8,15 +8,19 @@ import {
 } from "./style"
 import { Row, Col } from "antd"
 import ReactMarkdown from 'react-markdown'
+import sal from 'sal.js'
 
-const IntroSection = ({content}) => {
+const IntroSection = ({content,language}) => {
+  useEffect(() => {
+    sal()  
+  })
   return (
     <IntroSectionWrapper>
       <Row style={{ height: "100%" }} justify="space-between" align="middle">
-        <Col xxl={12} xl={10} lg={18} sm={20} xs={20} align="left">
-        <BasicTitleStyle width="300px">{content.aboutSection.english.title}</BasicTitleStyle>
+        <Col xxl={12} xl={10} lg={18} sm={20} xs={20} align="left" >
+          <BasicTitleStyle  width="300px">{content[`${language}`].title}</BasicTitleStyle>
           <IntroDes>
-            <ReactMarkdown>{content.aboutSection.english.description}</ReactMarkdown>
+            <ReactMarkdown>{content[`${language}`].description}</ReactMarkdown>
           </IntroDes>
         </Col>
 

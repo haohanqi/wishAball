@@ -24,32 +24,32 @@ const MapSection = ({ markers, showResult }) => {
     zoom: zoom,
   }
 
-  const renderMarkers = (map, maps) => {
-    if (markers.length > 0) {
-      //console.log(markers.length)
-      markers.map(item => {
-        let marker = new maps.Marker({
-          position: { lat: item.coAddress.lat, lng: item.coAddress.lng },
-          map,
-          title: item.title,
-        })
+  // const renderMarkers = (map, maps) => {
+  //   if (markers.length > 0) {
+  //     //console.log(markers.length)
+  //     markers.map(item => {
+  //       let marker = new maps.Marker({
+  //         position: { lat: item.coAddress.lat, lng: item.coAddress.lng },
+  //         map,
+  //         title: item.title,
+  //       })
 
-        let infowindow = new maps.InfoWindow({
-          content:
-            `<div class="infowindow-title">${item.title}</div>` +
-            `<div class="infowindow-address">${item.address}</div>` +
-            `<a href=${item.website} class="infowindow-link">${item.website}</a>`,
-        })
+  //       let infowindow = new maps.InfoWindow({
+  //         content:
+  //           `<div class="infowindow-title">${item.title}</div>` +
+  //           `<div class="infowindow-address">${item.address}</div>` +
+  //           `<a href=${item.website} class="infowindow-link">${item.website}</a>`,
+  //       })
 
-        marker.addListener("click", () => {
-          infowindow.open(map, marker)
-        })
-        return marker
-      })
-    } else {
-      console.log("no result")
-    }
-  }
+  //       marker.addListener("click", () => {
+  //         infowindow.open(map, marker)
+  //       })
+  //       return marker
+  //     })
+  //   } else {
+  //     console.log("no result")
+  //   }
+  // }
 
   return (
     <>
@@ -80,8 +80,6 @@ const MapSection = ({ markers, showResult }) => {
   )
 }
 const mapStateToProps = state => {
-  console.log(state.searchReducer.markers)
-  // console.log(state.searchReducer.showResult)
   return {
     markers: state.searchReducer.markers,
     showResult: state.searchReducer.showResult,

@@ -52,6 +52,7 @@ export const HomeOverlayWrapper = styled.div`
 //--EntrySection
 export const EntrySectionWrapper = styled(BasicSection)`
   margin-top: 60px;
+  min-height:100vh;
   &:after {
     content: "";
     display: block;
@@ -82,6 +83,21 @@ export const EntryTitle = styled(SectionTitle)``
 export const EntryDes = styled(Title)`
   color: ${basicColor.highlightColor};
   margin-bottom: 30px;
+`
+export const LanguageTrans = styled(Title)`
+  color: ${basicColor.secondaryColor};
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border: 3px solid black;
+  height:40px;
+  width:100px;
+  margin-bottom:20px;
+  transition: all 0.4s linear;
+  cursor:pointer;
+  &:hover{
+    background-color: ${basicColor.primaryColor};
+  }
 `
 
 export const TopNewsWrapper = styled.div`
@@ -239,6 +255,7 @@ export const SearchPanel = styled(IntroPanel)`
 
   .panelDes {
     opacity: 1;
+    width:100%;
   }
 
   .panelButton {
@@ -268,7 +285,27 @@ export const SearchPanel = styled(IntroPanel)`
 
 export const WorkWithUsWrapper = styled(BasicSection)``
 
-export const WorkWithUsDes = styled(IntroDes)``
+export const WorkWithUsItemWrapper = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+align-items:center;
+padding:10px;
+width:100%;
+min-height:200px;
+margin-bottom:30px;
+.titleIcon{
+  font-size:3rem;
+  color:black;
+  margin-bottom:10px;
+}
+`
+
+export const WorkWithUsDes = styled(IntroDes)`
+  margin:0;
+  width:90%;
+  text-align:center;
+`
 
 export const IdCard = styled.div`
   width: 100%;

@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import { ResultItemWrapper } from "./style"
 import { BankOutlined, PhoneOutlined, DesktopOutlined } from "@ant-design/icons"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const ResultItem = ({ data }) => {
   return (
@@ -24,7 +24,7 @@ const ResultItem = ({ data }) => {
       </div>
 
       <div className="see-more-button">
-        <Link to={`/wishaball/${data.path}`}>See More</Link>
+        <AniLink paintDrip hex="#fafafa" to={`/wishaball/${data.path}`}>See More</AniLink>
       </div>
     </ResultItemWrapper>
   )

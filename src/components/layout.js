@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { GlobalStyle } from "./basicStyle"
 import Header from "./commonComponents/Header"
 import Footer from "./commonComponents/Footer"
+import contactInfo from '../pageContent/ContactInfo.json'
+import footerInfo from '../pageContent/Footer.json'
 
 const Layout = ({ children }) => {
   return (
@@ -11,7 +13,7 @@ const Layout = ({ children }) => {
       <Header />
       <div>
         <main>{children}</main>
-        <Footer>©</Footer>
+        <Footer contactInfo={contactInfo} footerInfo={footerInfo}/>
       </div>
     </>
   )
