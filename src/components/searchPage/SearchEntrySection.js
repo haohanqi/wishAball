@@ -49,7 +49,7 @@ const SearchEntrySection = ({ setCate,content }) => {
         </Col>
 
         <Col xxl={12} xl={12} lg={12} sm={24} xs={24} align="center">
-          <SearchPanel src={searchEntryCover2}>
+          <SearchPanel src="https://images.unsplash.com/photo-1526391922840-891b87f9af1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
             <div className="panelTitle">
               {
               //content.entrySection.wishAClass.english.title
