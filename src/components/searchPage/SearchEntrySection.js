@@ -13,21 +13,19 @@ import searchEntryCover2 from '../../images/searchEntryCover2.jpeg'
 const SearchEntrySection = ({ setCate,content }) => {
   useEffect(() => {
     gsap.registerPlugin(scrollTo)
-  })
+  },[])
 
   const searchClick = cate => {
     setCate(cate)
     gsap.to(window, { duration: 1, scrollTo: ".search-section-wrapper" })
   }
+
   return (
     <SearchEntrySectionWrapper>
       <Row justify="space-around" align="middle">
         <Col xxl={12} xl={12} lg={12} sm={24} xs={24} align="center">
           <SearchPanel src={searchEntryCover1}>
             <div className="panelTitle">
-              {
-              //content.entrySection.wishASport.english.title
-              }
               WISH A SPORT
             </div>
             <div className="panelDes">
@@ -51,9 +49,6 @@ const SearchEntrySection = ({ setCate,content }) => {
         <Col xxl={12} xl={12} lg={12} sm={24} xs={24} align="center">
           <SearchPanel src="https://images.unsplash.com/photo-1526391922840-891b87f9af1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
             <div className="panelTitle">
-              {
-              //content.entrySection.wishAClass.english.title
-              }
               WISH A BOOK
             </div>
             <div className="panelDes">
@@ -85,3 +80,12 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(null, mapDispatchToProps)(SearchEntrySection)
+
+
+// {
+//   //content.entrySection.wishASport.english.title
+// }
+
+// {
+//   //content.entrySection.wishAClass.english.title
+// }
