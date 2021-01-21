@@ -9,7 +9,7 @@ export const SearchEntrySectionWrapper = styled(BasicSection)`
 `
 
 export const SearchPanel = styled.div`
-  max-width: 480px;
+  width: 480px;
   height: 480px;
   cursor: pointer;
   display: flex;
@@ -52,6 +52,7 @@ export const SearchPanel = styled.div`
     background-size: cover;
     opacity: 1;
     position: absolute;
+    width:100%;
     top: 0;
     left: 0;
     bottom: 0;
@@ -82,7 +83,7 @@ export const SearchPanel = styled.div`
 
   @media only screen and (max-width: 480px) and (min-width:320px) {
     margin-top: 60px;
-    max-width: 400px;
+    width: 400px;
     height: 400px;
     &:hover {
       transform: scale(1);
@@ -90,7 +91,7 @@ export const SearchPanel = styled.div`
   }
 
   @media only screen and (max-width: 320px) {
-    max-width: 290px;
+    width: 290px;
     height: 290px;
   }
 `
