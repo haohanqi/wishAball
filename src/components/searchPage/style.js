@@ -19,6 +19,8 @@ export const SearchPanel = styled.div`
   padding: 5px 10px;
   transition: all 0.4s linear;
   position: relative;
+  overflow:hidden;
+  box-sizing:border-box;
 
   .panelTitle {
     width: 100%;
@@ -29,6 +31,7 @@ export const SearchPanel = styled.div`
     font-weight:900;
     color: ${basicColor.highlightColor};
   }
+  
   .panelDes {
     text-align: left;
     transition: all 0.4s linear;
@@ -47,13 +50,13 @@ export const SearchPanel = styled.div`
   &:after {
     display: block;
     content: "";
+    width:100%;
+    max-height:100vh;
     background-image: url(${props => props.src});
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 1;
     position: absolute;
-    width:100%;
-    max-height:100vh;
     top: 0;
     left: 0;
     bottom: 0;
@@ -85,8 +88,8 @@ export const SearchPanel = styled.div`
 
   @media only screen and (max-width: 480px) and (min-width:320px) {
     margin-top: 60px;
-    width: 400px;
-    height: 400px;
+    width: 380px;
+    height: 380px;
     &:hover {
       transform: scale(1);
     }
