@@ -283,7 +283,9 @@ export const SearchPanel = styled(IntroPanel)`
 
 //--WorkWithUsSection
 
-export const WorkWithUsWrapper = styled(BasicSection)``
+export const WorkWithUsWrapper = styled(BasicSection)`
+min-height:100%;
+`
 
 export const WorkWithUsItemWrapper = styled.div`
 display:flex;
@@ -337,4 +339,6 @@ export const IdInfoDes = styled(Des)``
 
 //--NewsSection
 
-export const NewsSectionWrapper = styled(BasicSection)``
+export const NewsSectionWrapper = styled(BasicSection)`
+min-height:100%;
+`
