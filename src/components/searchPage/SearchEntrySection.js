@@ -81,6 +81,18 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(null, mapDispatchToProps)(SearchEntrySection)
 
+// export const query = graphql`
+//   query MyQuery {
+//   file(relativePath: {eq: "searchEntryCover1.jpeg"}) {
+//     childImageSharp {
+//       fluid(fit: COVER) {
+//         src
+//       }
+//     }
+//   }
+// }
+// `
+
 
 // {
 //   //content.entrySection.wishASport.english.title
